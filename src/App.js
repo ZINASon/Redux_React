@@ -18,11 +18,12 @@ function App() {
           <button onClick={()=>dispatch(filterTodo('true'))}>Done</button>
           <button onClick={()=>dispatch(filterTodo('false'))}>Not Done</button>
         </div>
-        <TodoList></TodoList>
+        <TodoList todos={ todoFiltred === 'All' ? todos : todos.filter(el => el.isDone === todoFiltred)}></TodoList>
          
       </header>
     </div>
-   );
+ 
+ );
 }
 
 export default App;

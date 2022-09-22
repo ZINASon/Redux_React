@@ -23,7 +23,7 @@ const Todo = ({todo}) => {
     <div>
         <hr></hr>
         <div>
-            <input type="checkbox" onClik={handleToggle}/>
+            <input type="checkbox" onClick={handleToggle}/>
             {todo.description}
         </div>
         <div>

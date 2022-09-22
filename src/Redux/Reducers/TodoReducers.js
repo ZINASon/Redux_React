@@ -5,13 +5,13 @@ const initState = {
     filter: 'ALL',
     todos: [
         {
-            id: 1,
-            description: "first ToDo",
+            id: '01',
+            description: "CheckPoint Redux",
             isDone: false
         },
         {
-            id: 2,
-            description: "Second ToDo",
+            id: '02',
+            description: "API SKILL",
             isDone: false
         }
     ]
@@ -35,12 +35,12 @@ const TodoReducers = (state = initState, { type, payload }) => {
         case TOGGLE_TODO:
             return {
                 ...state,
-                todos: state.todos.map(elm => elm.id !== payload ? {...elm,isDone: !elm.isDone}: elm)
+                todos: state.todos.map(elm => elm.id === payload ? {...elm, isDone: !elm.isDone}: elm)
             }
         case EDIT_TODO:
             return {
                 ...state,
-                todos: state.todos.map(elm => elm.id !== payload.id? payload: elm)
+                todos: state.todos.map(elm => elm.id === payload.id? payload: elm)
             }
         case TOGGLE_FILTER :
             return {
